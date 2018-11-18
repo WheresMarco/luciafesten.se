@@ -1,0 +1,6 @@
+M�rten:
+Har fixat en kalender som uppdaterar varje dag fr�n PR-periodens b�rjan fram till 2
+dagar innan festen, om jag har t�nkt r�tt. L�gg alla bilder du vill l�gga upp i mappen
+img/kalender/ och d�p dem till "dagX.jpg". Texter du vill ha till bilderna l�gger du l�ngst
+ned i index.html, jag har lagt en exempel-text d�r. L�gg till p� samma s�tt och ge varje text
+ett numrerat id, som i exemplet :) Fram tills PR-perioden b�rjar kommer den att visa f�rsta bilden.
