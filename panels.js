@@ -51,13 +51,27 @@ function countDown() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+
   // Output the result in an element with id="demo"
   if(window.innerWidth < 400) {
-    document.getElementById("countdown").innerHTML = days + " dagar " + hours + " timmar <br>"
-  + minutes + " m " + seconds + " s ";
+    if(page == "utrikiska.html") {
+        document.getElementById("countdown").innerHTML = days + " days " + hours + " hours <br>"
+      + minutes + " m " + seconds + " s ";
+    } else {
+        document.getElementById("countdown").innerHTML = days + " dagar " + hours + " timmar <br>"
+      + minutes + " m " + seconds + " s ";
+    }
   } else {
-    document.getElementById("countdown").innerHTML = days + " dagar " + hours + " timmar "
-  + minutes + " m " + seconds + " s ";
+    if(page == "utrikiska.html") {
+        document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
+      + minutes + " m " + seconds + " s ";
+    } else {
+        document.getElementById("countdown").innerHTML = days + " dagar " + hours + " timmar "
+      + minutes + " m " + seconds + " s ";
+    }
   }
 
   if(!$("#kalender").hasClass("updated")) {
@@ -68,13 +82,16 @@ function countDown() {
     $("#kalenderText").html($("#kalenderText" + pictureNumber).html());
   }
 
+  if(days < 5) {
+    // Start a pulsing glow at the top ticket button and the ticket panel.
+    $(".buyTicket").addClass("button-glow");
+    $($(".textcontainer")[3]).addClass("button-glow-slow");
+  }
+
   // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "NU ÄR DET FEST!!!";
-    // Start a pulsing glow at the top ticket button and the ticket panel.
-    $(".buyTicket").addClass("button-glow");
-    $($(".textcontainer")[3]).addClass("button-glow-slow");
   }
   }, 1000);
 }

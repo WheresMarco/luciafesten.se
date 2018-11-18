@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-image: linear-gradient(rgb(18, 33, 122), rgb(127, 133, 161));
   overflow-x: hidden;
@@ -99,17 +103,20 @@ span {
 }
 
 .sponsorRow {
+  margin: 0;
+  padding: 0;
   text-align: center;
   background-image: linear-gradient(rgba(127, 133, 161, 0), rgba(18, 33, 122, 255));
 }
 
 .sponsor {
-  padding: 5em;
+  padding: 2em;
 }
 
 .sponsorLogo {
-  width: 80%;
-  margin-top: auto;
+  margin: 0;
+  width: 46%;
+  padding: 0;
 }
 
 .snowFlake {
@@ -151,6 +158,11 @@ span {
 #luciafestenImage {
   margin: 0;
   margin-top: 5em;
+  width: 100%;
+}
+
+#luciageneralernaImage {
+  margin-top: 2em;
   width: 100%;
 }
 
@@ -198,7 +210,8 @@ span {
   background-color: #ad3134;
 }
 .navbar-toggle {
-  border-radius: 4px; /* Fyrkantig (0px) eller rundad menyknapp(4px)*/
+  border-radius: 3px; /* Fyrkantig (0px) eller rundad menyknapp(4px)*/
+  margin-right: 1em;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #67191b;  /* Färgen på menyrutans ränder*/

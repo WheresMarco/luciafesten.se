@@ -9,6 +9,10 @@ function insertImgSmall()
   .append('<img class="gallery" src="img/luciafesten-bilder/blaset-sång.jpg">')
   .append('<img class="gallery" src="img/luciafesten-bilder/luciafest-publik.jpg">');
 
+  $(".sponsorRow").html('').append('<div class="col-md-6 sponsor"><img class="sponsorLogo" src="img/sponsor2.png"></div>')
+  .append('<div class="col-md-6 sponsor"><img class="sponsorLogo" src="img/sponsor1.png"></div>');
+  $(".sponsorLogo").css("width", "100%");
+
   $(".gallery").css("max-width", "98%");
 }
 
@@ -22,6 +26,10 @@ function insertImgLarge()
   .append('<img class="gallery" src="img/luciafesten-bilder/ksg-korthus.jpg">')
   .append('<img class="gallery" src="img/luciafesten-bilder/blaset-sång.jpg">')
   .append('<img class="gallery" src="img/luciafesten-bilder/luciafest-publik.jpg">');
+
+  $(".sponsorRow").html('').append('<div class="col-md-6 sponsor"><img class="sponsorLogo" src="img/sponsor1.png"></div>')
+  .append('<div class="col-md-6 sponsor"><img class="sponsorLogo" src="img/sponsor2.png"></div>');
+  $(".sponsorLogo").css("width", "50%");
 
   $(".gallery").css("max-width", "46%");
 }
