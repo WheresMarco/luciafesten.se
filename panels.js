@@ -37,6 +37,27 @@ function animateRotation(element, startDegrees, endDegrees){
     });
 }
 
+// Function and variable to handle dayly calendar update.
+var calendarDay = -1;
+function updateCalendar(days) {
+  var pictureNumber = Math.max(1, Math.min(24, 26 - days));
+  console.log("Days left: " + days);
+  console.log("Loading image no. " + pictureNumber);
+  $("#kalender").addClass("updated").attr("src", "img/kalender/dag" + pictureNumber + ".jpg");
+  $("#kalenderText").html($("#kalenderText" + pictureNumber).html());
+  calendarDay = days;
+}
+
+$('#kalender')
+	.load(function(){
+    // Calendar loaded correctly
+	})
+	.error(function(){
+    // No image was found for calendar, trying to load previous day.
+    updateCalendar(calendarDay + 1);
+    console.log("Couldn't load the correct image for calendar, trying previous day!");
+	});
+
 function countDown() {
   // Set the date we're counting down to
   var countDownDate = new Date("Dec 15, 2018 17:30:00").getTime();
@@ -75,11 +96,7 @@ function countDown() {
   }
 
   if(!$("#kalender").hasClass("updated")) {
-    console.log(days);
-    var pictureNumber = Math.min(1, Math.max(24, 26 - days));
-    console.log(pictureNumber);
-    $("#kalender").addClass("updated").attr("src", "img/kalender/dag" + pictureNumber + ".jpg");
-    $("#kalenderText").html($("#kalenderText" + pictureNumber).html());
+    updateCalendar(days);
   }
 
   if(days < 5) {
