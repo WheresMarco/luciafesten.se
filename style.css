@@ -84,8 +84,18 @@ span {
   height: auto;
 }
 
+.kalender{
+    max-width: 100%;
+    height: auto;
+}
+
 .kalenderContainer{
 
+}
+
+.kalender-titel{
+    color:#c23434;
+    margin-top: 0.8em;
 }
 
 .col-md-6 {
