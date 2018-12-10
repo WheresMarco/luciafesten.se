@@ -99,10 +99,10 @@ function countDown() {
     updateCalendar(days);
   }
 
-  if(days < 5) {
+  if(days <= 5) {
     // Start a pulsing glow at the top ticket button and the ticket panel.
     $(".buyTicket").addClass("button-glow");
-    $($(".textcontainer")[3]).addClass("button-glow-slow");
+    //$($(".textcontainer")[3]).addClass("button-glow-slow");
   }
 
   // If the count down is over, write some text
